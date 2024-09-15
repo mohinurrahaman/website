@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Form</title>
+    <style>
+        .form-center {
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 12px;
+            display: inline-block;
+            margin: auto;
+            width: 340px;
+            background-color: #f9f9f9;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name1 = document.getElementById("name1").value;
+            var name2 = document.getElementById("name2").value;
+            var number1 = document.getElementById("number1").value;
+            var email1 = document.getElementById("email1").value;
+            var date1 = document.getElementById("date1").value;
+            var password1 = document.getElementById("password1").value;
+            var password2 = document.getElementById("password2").value;
+            var genderMale = document.getElementById("male1").checked;
+            var genderFemale = document.getElementById("female1").checked;
+
+            if (name1 === "" || name2 === "" || number1 === "" || email1 === "" || date1 === "" || password1 === "" || password2 === "" || (!genderMale && !genderFemale)) {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            if (password1 !== password2) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email1)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-center">
+        <form onsubmit="return validateForm();">
+            <label for="name1">First Name :</label><br>
+            <input type="text" id="name1" name="name1" placeholder="Enter your name.."><br>
+            <label for="name2">Last Name :</label><br>
+            <input type="text" id="name2" name="name2" placeholder="Enter your last name.."><br>
+            <label for="number1">Phone number:</label><br>
+            <input type="text" id="number1" name="number1" placeholder="Enter your phone number.."><br>
+            <label for="email1">Email id:</label><br>
+            <input type="text" id="email1" name="email1" placeholder="Enter your email id.."><br>
+            <label for="date1">Date of birth :</label><br>
+            <input type="date" id="date1" name="date1"><br>
+            <label for="password1">Password:</label><br>
+            <input type="password" id="password1" name="password1" placeholder="Enter password.."><br>
+            <label for="password2">Confirm Password:</label><br>
+            <input type="password" id="password2" name="password2" placeholder="Enter password.."><br>
+            <p>
+                <label for="male1">Male:</label>
+                <input type="radio" id="male1" name="gender">
+                <label for="female1">Female:</label>
+                <input type="radio" id="female1" name="gender"><br><br>
+            </p>
+            <p>
+                <button type="button" onclick="location.href='C:\\Users\\Mohinur\\OneDrive\\Desktop\\Mohinur Rahaman\\5th page of website.html';">Login</button>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
