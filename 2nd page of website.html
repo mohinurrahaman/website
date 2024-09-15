@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Login Form</title>
+    <style>
+        .form-center {
+            max-width: 500px;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 15px;
+            display: inline-block;
+            margin: 50px;
+            width: 340px;
+            background-color: #f0f0f0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        h1, h2, p {
+            text-align: center;
+        }
+        .error {
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var Email_id = document.getElementById("Email_id").value;
+            var password = document.getElementById("password").value;
+
+            if (Email_id === "" || password === "") {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(Email_id)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-center">
+        <form onsubmit="return validateForm();">
+            <h1><p style="color:blue;"><u>Login Now</u></p></h1>
+            <h2><p style="color:red;">You are Not Logged In Right Now</p></h2>
+            <label for="Email_id">Email id</label><br>
+            <input type="text" id="Email_id" name="Email_id" placeholder="Enter your Email id .."><br><br>
+            <label for="password">PASSWORD</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password.."><br><br>
+            <p><button type="button" onclick="location.href='file:///C:/Users/Mohinur/OneDrive/Desktop/Mohinur%20Rahaman/3rd%20page%20of%20website.html';">Login</button></p>
+        </form>
+    </div>
+</body>
+</html>
